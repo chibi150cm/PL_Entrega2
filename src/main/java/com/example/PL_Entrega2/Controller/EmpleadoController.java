@@ -28,8 +28,8 @@ public class EmpleadoController {
     }
 
     @PutMapping({"/{id}"})
-    public String updateEmpleado(@RequestBody Empleado empleado){
-        return empleadoService.updateEmpleado(empleado);
+    public String updateEmpleado(@PathVariable int id, @RequestBody Empleado empleado){
+        return empleadoService.updateEmpleado(id, empleado);
     }
 
     @DeleteMapping("/{id}")

@@ -14,7 +14,7 @@ public class ClienteController {
 
     @GetMapping
     public String listarClientes() {
-        return clienteService.getAllUsers();
+        return clienteService.getAllClientes();
     }
 
     @GetMapping("/{id}")
@@ -27,10 +27,10 @@ public class ClienteController {
         return clienteService.addCliente(cliente);
     }
 
-    @PutMapping
-    public String actualizarCliente(@RequestBody Cliente cliente) {
-        return clienteService.updateCliente(cliente);
-    }
+    @PutMapping("/{id}")
+    public String actualizarCliente(@PathVariable int id, @RequestBody Cliente cliente) {
+            return clienteService.updateCliente(id, cliente);
+        }
 
     @DeleteMapping("/{id}")
     public String eliminarCliente(@PathVariable Integer id) {
