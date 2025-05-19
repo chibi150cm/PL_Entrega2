@@ -12,5 +12,8 @@ public class Empleado {
     private int idEmpleado;
     private String nombre;
     private String apellido;
+    private String mail;
+    private String password;
+    private String cargo;
     private String sucursal;
 }
