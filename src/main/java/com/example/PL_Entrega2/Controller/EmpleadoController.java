@@ -27,13 +27,13 @@ public class EmpleadoController {
         return empleadoService.addEmpleado(empleado);
     }
 
-    @PutMapping
-    public String editEmpleado(@RequestBody Empleado empleado){
+    @PutMapping({"/{id}"})
+    public String updateEmpleado(@RequestBody Empleado empleado){
         return empleadoService.updateEmpleado(empleado);
     }
 
-    @DeleteMapping
-    public String deleteEmpleado(@PathVariable Integer id){
+    @DeleteMapping("/{id}")
+    public String deleteEmpleado(@PathVariable int id){
         return empleadoService.deleteEmpleado(id);
     }
 }
