@@ -1,9 +1,7 @@
 package com.example.PL_Entrega2.Controller;
 
 import com.example.PL_Entrega2.Model.Empleado;
-import com.example.PL_Entrega2.Service.ClienteService;
 import com.example.PL_Entrega2.Service.EmpleadoService;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
