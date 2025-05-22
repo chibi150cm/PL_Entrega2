@@ -21,6 +21,6 @@ public class Cliente {
     private int telefono;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "carrito.id")
+    @JoinColumn(name = "carrito_id")
     private Carrito carrito;
 }
