@@ -27,7 +27,7 @@ public class InventarioController {
         return inventarioService.addInventario(inventario);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public String actualizarInventario(@RequestBody Inventario inventario) {
         return inventarioService.updateInventario(inventario);
     }

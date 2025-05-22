@@ -27,7 +27,7 @@ public class SucursalController {
         return sucursalService.addSucursal(sucursal);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public String actualizarSucursal(@RequestBody Sucursal sucursal) {
         return sucursalService.updateSucursal(sucursal);
     }

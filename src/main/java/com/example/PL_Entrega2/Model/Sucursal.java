@@ -18,4 +18,5 @@ public class Sucursal {
     @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "comuna_id")
     private Comuna comuna;
+
 }

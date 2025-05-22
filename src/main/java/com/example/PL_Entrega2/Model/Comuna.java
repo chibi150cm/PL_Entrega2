@@ -21,6 +21,9 @@ public class Comuna {
 
 
     //Puede que de porblemas por el tema del array list
+
+    //mappedby indica quiein es el dueño
+    //el resta es para borrar la sucursusal si es que se borra alguna de las llaves
     @OneToMany(mappedBy = "comuna", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Sucursal> sucursales = new ArrayList<>();
 }
