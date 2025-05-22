@@ -5,6 +5,8 @@ import com.example.PL_Entrega2.Repository.InventarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InventarioService {
 
@@ -38,7 +40,12 @@ public class InventarioService {
                 .orElse("Inventario no encontrado");
     }
 
+    // se le hacía una lista también?
     public String getAllInventario() {
-        return inventarioRepository.findAll().toString();
+        List<Inventario> inventario = inventarioRepository.findAll();
+        if (inventario.isEmpty()) {
+            return "No hay productos en el inventario.";
+        }
+        return inventario.toString();
     }
 }

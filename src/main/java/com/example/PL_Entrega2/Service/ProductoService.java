@@ -41,8 +41,12 @@ public class ProductoService {
     }
 
     //falta un if si es que no encuentra nada
+    //tamos tuki
     public String getAllProductos() {
         List<Producto> productos = productoRepository.findAll();
+        if (productos.isEmpty()) {
+            return "No hay productos registrados";
+        }
         return productos.toString();
     }
 }

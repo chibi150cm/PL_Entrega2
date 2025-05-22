@@ -37,10 +37,10 @@ public class EmpleadoService {
             output = "ID Empleado: "+empleado.getIdEmpleado()+"\n";
             output += "Nombre: "+empleado.getNombre()+"\n";
             output += "Apellido: "+empleado.getApellido()+"\n";
-            output += "mail: "+empleado.getMail()+"\n";
-            output += "password: "+empleado.getPassword()+"\n";
-            output += "cargo: "+empleado.getCargo()+"\n";
-            output += "sucursal: "+empleado.getSucursal()+"\n";
+            output += "Mail: "+empleado.getMail()+"\n";
+            output += "Password: "+empleado.getPassword()+"\n";
+            output += "Cargo: "+empleado.getCargo()+"\n";
+            output += "Sucursal: "+empleado.getSucursal()+"\n";
             return output;
         }else{
             return "No se encontro empleado";

@@ -1,9 +1,9 @@
 package com.example.PL_Entrega2.Repository;
 
-import com.example.PL_Entrega2.Model.Producto;
+import com.example.PL_Entrega2.Model.Sucursal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductoRepository extends JpaRepository<Producto, Integer> {
+public interface SucursalRepository extends  JpaRepository<Sucursal,Integer> {
 }

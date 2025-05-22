@@ -14,9 +14,15 @@ public class Inventario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idInventario;
+
     @ManyToOne
+    @JoinColumn(name = "producto_id")
     private Producto producto;
-    private String sucursal;
+
+    @ManyToOne
+    @JoinColumn(name = "sucursal_id")
+    private Sucursal sucursal;
+
     private int stockActual;
     private int stockMin;
     private int stockMax;
