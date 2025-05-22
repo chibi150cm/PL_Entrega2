@@ -40,6 +40,7 @@ public class ProductoService {
                 .orElse("Producto no encontrado");
     }
 
+    //falta un if si es que no encuentra nada
     public String getAllProductos() {
         List<Producto> productos = productoRepository.findAll();
         return productos.toString();

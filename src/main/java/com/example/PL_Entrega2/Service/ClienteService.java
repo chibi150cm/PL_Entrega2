@@ -30,7 +30,7 @@ public class ClienteService {
     }
 
     public String getCliente(int id){
-        String output = "";
+        String output ="";
         if(clienteRepository.existsById(id)){
             Cliente cliente = clienteRepository.findById(id).get();
             output = "ID Cliente"+cliente.getIdCliente()+"\n";
