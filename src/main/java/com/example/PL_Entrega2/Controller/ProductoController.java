@@ -12,6 +12,7 @@ public class ProductoController {
     @Autowired
     private ProductoService productoService;
 
+
     @GetMapping
     public String listarProductos() {
         return productoService.getAllProductos();
