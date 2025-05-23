@@ -15,12 +15,12 @@ public class Inventario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idInventario;
 
-    @ManyToOne
-    @JoinColumn(name = "producto_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "producto_id", nullable = false)
     private Producto producto;
 
-    @ManyToOne
-    @JoinColumn(name = "sucursal_id")
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "sucursal_id", nullable = false)
     private Sucursal sucursal;
 
     private int stockActual;
