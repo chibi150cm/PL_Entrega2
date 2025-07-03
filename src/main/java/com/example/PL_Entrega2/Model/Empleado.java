@@ -19,7 +19,7 @@ public class Empleado {
     private String mail;
     private String password;
     private String cargo;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sucursal_id")
     private Sucursal sucursal;
 }

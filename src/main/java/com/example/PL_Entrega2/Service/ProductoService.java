@@ -4,8 +4,10 @@ import com.example.PL_Entrega2.Model.Producto;
 import com.example.PL_Entrega2.Repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductoService {
@@ -18,35 +20,28 @@ public class ProductoService {
         return "Producto agregado";
     }
 
-    public String updateProducto(Producto producto) {
-        if (productoRepository.existsById(producto.getIdProducto())) {
+    public boolean updateProducto(int id, Producto producto) {
+        if (productoRepository.existsById(id)) {
+            producto.setIdProducto(id);
             productoRepository.save(producto);
-            return "Producto actualizado";
+            return true;
         }
-        return "Producto no encontrado";
+        return false;
     }
 
-    public String deleteProducto(int id) {
+    public boolean deleteProducto(int id) {
         if (productoRepository.existsById(id)) {
             productoRepository.deleteById(id);
-            return "Producto eliminado";
+            return true;
         }
-        return "Producto no encontrado";
+        return false;
     }
 
-    public String getProducto(int id) {
-        return productoRepository.findById(id)
-                .map(Producto::toString)
-                .orElse("Producto no encontrado");
+    public Optional<Producto> getProducto(int id) {
+        return productoRepository.findById(id);
     }
 
-    //falta un if si es que no encuentra nada
-    //tamos tuki
-    public String getAllProductos() {
-        List<Producto> productos = productoRepository.findAll();
-        if (productos.isEmpty()) {
-            return "No hay productos registrados";
-        }
-        return productos.toString();
+    public List<Producto> getAllProductos() {
+        return productoRepository.findAll();
     }
 }

@@ -3,6 +3,7 @@ package com.example.PL_Entrega2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class PlEntrega2Application {
 

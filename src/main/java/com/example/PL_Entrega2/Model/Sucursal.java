@@ -18,7 +18,7 @@ public class Sucursal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreSucursal;
-    @ManyToOne(fetch =  FetchType.LAZY)
+    @ManyToOne(fetch =  FetchType.EAGER)
     @JoinColumn(name = "comuna_id")
     private Comuna comuna;
 

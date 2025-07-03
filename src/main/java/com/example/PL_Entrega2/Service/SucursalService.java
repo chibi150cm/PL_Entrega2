@@ -2,49 +2,46 @@ package com.example.PL_Entrega2.Service;
 
 import com.example.PL_Entrega2.Model.Sucursal;
 import com.example.PL_Entrega2.Repository.SucursalRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
+@Transactional
 public class SucursalService {
 
     @Autowired
     private SucursalRepository sucursalRepository;
 
-    public String addSucursal(Sucursal sucursal) {
+    public List<Sucursal> getAllSucursales() {
+        return sucursalRepository.findAll();
+    }
+
+    public Optional<Sucursal> getSucursal(Integer id) {
+        return sucursalRepository.findById(id);
+    }
+
+    public void addSucursal(Sucursal sucursal) {
         sucursalRepository.save(sucursal);
-        return "Sucursal agregada con exito";
     }
 
-    public String updateSucursal(Sucursal sucursal) {
-        if (sucursalRepository.existsById(sucursal.getId())) {
+    public boolean updateSucursal(Integer id, Sucursal sucursal) {
+        if (sucursalRepository.existsById(id)) {
+            sucursal.setId(id);
             sucursalRepository.save(sucursal);
-            return "Sucursal actualizada";
+            return true;
         }
-        return "Sucursal no existe";
+        return false;
     }
 
-    public String deleteSucursal(int id) {
+    public boolean deleteSucursal(Integer id) {
         if (sucursalRepository.existsById(id)) {
             sucursalRepository.deleteById(id);
-            return "Sucursal eliminada";
+            return true;
         }
-        return "Sucursal no encontrada";
-    }
-
-    public String getSucursal(int id) {
-        return sucursalRepository.findById(id)
-                .map(Sucursal::toString)
-                .orElse("Sucursal no encontrada");
-    }
-
-    public String getAllSucursales() {
-        List<Sucursal> sucursales = sucursalRepository.findAll();
-        if (sucursales.isEmpty()) {
-            return "No hay sucursales registradas";
-        }
-        return sucursales.toString();
+        return false;
     }
 }
