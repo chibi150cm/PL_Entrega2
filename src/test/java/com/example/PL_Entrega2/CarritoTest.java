@@ -31,7 +31,7 @@ public class CarritoTest {
     @MockitoBean
     CarritoService carritoService;
 
-    //estos test son distintos de los demas, todo porque quise jugar con el objeto completo
+    //estos test son distintos de los demas ya que trabajan con el objeto completo
     @Test
     void findAllCarritosTest() {
         carritoRepository.deleteAll(); //en caso de correr el test multiple veces
